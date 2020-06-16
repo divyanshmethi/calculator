@@ -12,28 +12,28 @@
           <input class="zero-row" type="number" name="num" value="0" id="inputValue"/>
         </div>
         <div class="first-row">
-          <button type="button" name="one" class="btn btn-lg btn-light digits">1</button>
-          <button type="button" name="two" class="btn btn-lg btn-light digits">2</button>
-          <button type="button" name="three" class="btn btn-lg btn-light digits">3</button>
-          <button type="button" name="four" class="btn btn-lg btn-light digits">4</button>
+          <button type="button" name="one" class="btn btn-lg btn-light" onclick="readNumber(this.name)">1</button>
+          <button type="button" name="two" class="btn btn-lg btn-light" onclick="readNumber(this.name)">2</button>
+          <button type="button" name="three" class="btn btn-lg btn-light" onclick="readNumber(this.name)">3</button>
+          <button type="button" name="four" class="btn btn-lg btn-light" onclick="readNumber(this.name)">4</button>
         </div>
         <div class="second-row">
-          <button type="button" name="five" class="btn btn-lg btn-light digits">5</button>
-          <button type="button" name="six" class="btn btn-lg btn-light digits">6</button>
-          <button type="button" name="seven" class="btn btn-lg btn-light digits">7</button>
-          <button type="button" name="eight" class="btn btn-lg btn-light digits">8</button>
+          <button type="button" name="five" class="btn btn-lg btn-light" onclick="readNumber(this.name)">5</button>
+          <button type="button" name="six" class="btn btn-lg btn-light" onclick="readNumber(this.name)">6</button>
+          <button type="button" name="seven" class="btn btn-lg btn-light" onclick="readNumber(this.name)">7</button>
+          <button type="button" name="eight" class="btn btn-lg btn-light" onclick="readNumber(this.name)">8</button>
         </div>
         <div class="third-row">
-          <button type="button" name="nine" class="btn btn-lg btn-light digits">9</button>
-          <button type="button" name="zero" class="btn btn-lg btn-light digits">0</button>
-          <button type="button" name="plus" class="btn btn-lg btn-light operators">+</button>
-          <button type="button" name="minus" class="btn btn-lg btn-light operators">-</button>
+          <button type="button" name="nine" class="btn btn-lg btn-light" onclick="readNumber(this.name)">9</button>
+          <button type="button" name="zero" class="btn btn-lg btn-light" onclick="readNumber(this.name)">0</button>
+          <button type="button" name="plus" class="btn btn-lg btn-light" onclick="readChar(this.name)">+</button>
+          <button type="button" name="minus" class="btn btn-lg btn-light" onclick="readChar(this.name)">-</button>
         </div>
         <div class="fourth-row">
-          <button type="button" class="btn btn-lg btn-danger" name="clear">C</button>
-          <button type="button" class="btn btn-primary btn-lg" name="equals" id="equals">=</button>
-          <button type="button" name="multiply" class="btn btn-lg btn-light operators">*</button>
-          <button type="button" name="divide" class="btn btn-lg btn-light operators">/</button>
+          <button type="button" class="btn btn-lg btn-danger" name="clear" onclick="clearNumber()">C</button>
+          <button type="button" class="btn btn-primary btn-lg" name="equals" onclick="performOperation()">=</button>
+          <button type="button" name="multiply" class="btn btn-lg btn-light" onclick="readChar(this.name)">*</button>
+          <button type="button" name="divide" class="btn btn-lg btn-light" onclick="readChar(this.name)">/</button>
         </div>
       </div>
       <script src="js/index.js" charset="utf-8"></script>

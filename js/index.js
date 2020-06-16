@@ -2,19 +2,31 @@ var operation = "";
 var equalResult = false;
 var firstOperand;
 
-function myKeyPress(e){
-    var keynum;
+// function myKeyPress(e){
+//     let keynum;
+//
+//     if(window.event) {
+//       keynum = e.keyCode;
+//     } else if(e.which){
+//       keynum = e.which;
+//     }
+//     let arrNum = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+//     let arrChar = ["multiply","plus","","minus","","divide"];
+//     if(keynum <= 48 && keynum >= 57)
+//     {
+//       readNumber(arrNum[keynum-48]);
+//     }
+//     else if(keynum==61){
+//       performOperation();
+//     }
+//     else if(keynum==42 || keynum==43 || keynum==45 || keynum==47){
+//       readChar(arrChar[keynum-42]);
+//     }
+//     else {
+//     }
+//   }
 
-    if(window.event) {
-      keynum = e.keyCode;
-    } else if(e.which){
-      keynum = e.which;
-    }
-
-    alert(String.fromCharCode(keynum));
-  }
-
-document.getElementById("equals").addEventListener('click',function(){
+function performOperation(){
   let secondOperand = parseInt(document.getElementById("inputValue").value);
   console.log(firstOperand);
   console.log(secondOperand);
@@ -38,15 +50,27 @@ document.getElementById("equals").addEventListener('click',function(){
     }
   document.getElementById("inputValue").value = res;
   equalResult = true;
-});
+}
 
-let elements = document.getElementsByClassName("digits");
-for(let i = 0;i<elements.length;i++)
+function clearNumber()
 {
-  elements[i].addEventListener('click',function(){
+  let inputValue = document.getElementById("inputValue").value;
+  console.log(inputValue);
+  let res;
+  if(inputValue.length <= 1)
+  {
+    res = "0";
+  }
+  else {
+    res = inputValue.substring(0,inputValue.length - 1);
+  }
+  document.getElementById("inputValue").value = res;
+}
+
+function readNumber(eleName){
     let inputValue = document.getElementById("inputValue").value;
     let num;
-    switch (this.name) {
+    switch (eleName) {
       case "one":
         num = 1;
         break;
@@ -93,15 +117,10 @@ for(let i = 0;i<elements.length;i++)
       }
     }
     document.getElementById("inputValue").value = inputValue;
-  });
 }
 
-let operators = document.getElementsByClassName("operators");
-for(let i = 0;i<operators.length;i++)
-{
-  operators[i].addEventListener('click',function(){
-    operation = this.name;
+function readChar(oper){
+    operation = oper;
     firstOperand = parseInt(document.getElementById("inputValue").value);
     document.getElementById("inputValue").value = "0";
-  });
 }
